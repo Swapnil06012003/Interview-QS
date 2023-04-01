@@ -1,0 +1,12 @@
+#include <bits/stdc++.h>
+using namespace std;
+void reverse(string s){
+    int n=s.length();
+    while(n--)  cout<<s[n];
+
+}
+int main(){
+    string s;   getline(cin,s);
+    reverse(s);
+    return 0;
+}
