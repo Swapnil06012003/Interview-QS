@@ -1,0 +1,20 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+int main(){
+    string s;   getline(cin,s);
+    unordered_map <char,int> um;
+    // Storing all the character and their freq in map
+    for(int i=0;i<s.length();i++)   um[s[i]]++;
+    // Storing all the char with freq 1 in vector
+    vector <char> v;
+    for(auto x : um){
+        if(x.second==1)
+        v.push_back(x.first);
+    }
+    //Traversing through string to find first non-repeated char using the above vector
+    for(int i=0;i<s.length();i++){
+         if (count(v.begin(), v.end(), s[i]))   {cout<<s[i];    break;}
+    }
+    return 0;
+}
