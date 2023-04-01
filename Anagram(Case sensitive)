@@ -1,0 +1,30 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+int main(){
+    
+    cout<<"Enter the first string:"<<endl;  string s1;  cin>>s1;
+    cout<<"Enter the second string:"<<endl; string s2;  cin>>s2;
+    
+    int flag=0;
+    
+    if(s1.length()!=s2.length())    cout<<"Not an anagram";
+    else{
+        map<char,int> m;
+        for(int i=0;i<s1.length();i++){
+            m[s1[i]]++;
+        }
+        for(int i=0;i<s1.length();i++){
+            if(m.find(s2[i])==m.end()){   flag=1; break;}
+            m[s2[i]]--;
+        }
+        
+        for(auto x: m){
+            if(x.second>=1) flag=1;
+        }
+        
+        if(flag==0) cout<<"Given strings are anagram";
+        else{cout<<"Not an anagram"; }
+    }
+    return 0;
+}
